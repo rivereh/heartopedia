@@ -1,0 +1,450 @@
+[
+  {
+    "name": "Apollo",
+    "location": "Bait the Insects Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Asparagus Beetle",
+    "location": "Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Cabbage White",
+    "location": "Fishing Village",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Common Brimstone",
+    "location": "Suburbs",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "European Firebug",
+    "location": "Home Lot Rocks",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Gold Grasshoppers",
+    "location": "Onsen Mountain",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Large Red Damselfly",
+    "location": "Waterside",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Old World Swallowtail",
+    "location": "Forest",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Orange-Tip",
+    "location": "Central Area",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Postman Butterfly",
+    "location": "Bait the Insects Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Sulkowsky's Morpho",
+    "location": "Inflatable Insect Attractor",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Amethyst Flower Beetle",
+    "location": "Home Lot Rocks",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Bumblebee",
+    "location": "Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Common Blue Butterfly",
+    "location": "Central Area",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Four-Spotted Skimmer",
+    "location": "Suburban Lakeshore",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Green Tiger Beetle",
+    "location": "Onsen Mountain",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Seven-Spotted Ladybug",
+    "location": "Suburbs",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Siberian Grasshopper",
+    "location": "Fishing Village",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Wasp Beetle",
+    "location": "Forest",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Ant",
+    "location": "Fishing Village Square",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Fire-Colored Beetle",
+    "location": "Onsen Mountain",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Katydid",
+    "location": "Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Mini Moon Moth",
+    "location": "Suburbs",
+    "time": "6:00AM-12:00AM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Pink Katydid",
+    "location": "Bait the Insects Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Purple Emperor",
+    "location": "Flower Field, Whale Mountain",
+    "time": "12:00PM-12:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Rajah Brooke's Birdwing",
+    "location": "Home Lots",
+    "time": "12:00AM-12:00PM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Waroona Cuckoo Bee",
+    "location": "Forest Deer Tower",
+    "time": "6:00AM-12:00AM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Beautiful Leopard",
+    "location": "Fishing Village Wharf",
+    "time": "12:00AM-6:00PM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Cicada",
+    "location": "Spirit Oak Pine Forest",
+    "time": "12:00PM-12:00AM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Common Whitetail",
+    "location": "River Bank",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Four-Spotted Ladybug",
+    "location": "Onsen Mountain Crater Lake",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Large Banded Grasshopper",
+    "location": "Suburbs",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Mediterranean Mantis",
+    "location": "Onsen Mountain Stone Cliff",
+    "time": "12:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Alpine Longhorn Beetle",
+    "location": "Forest Island",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Asian Lady Beetle",
+    "location": "Forest Deer Tower",
+    "time": "12:00PM-12:00AM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Giant Asian Mantis",
+    "location": "Onsen Mountain Ruins",
+    "time": "12:00PM-6:00PM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Mourning Cloak",
+    "location": "Onsen Mountain",
+    "time": "12:00AM-12:00PM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Peacock Butterfly",
+    "location": "Windmill Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Splay-Footed Carpenter",
+    "location": "Whale Mountain Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "White Witch",
+    "location": "Bait the Insects Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Beautiful Demoiselle",
+    "location": "Forest Lake Shore",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Blue Shieldbug",
+    "location": "Fishing Village Lighthouse",
+    "time": "6:00AM-6:00PM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Green Birdwing",
+    "location": "Suburbs",
+    "time": "6:00AM-12:00AM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Silver Jewel Scarab",
+    "location": "Onsen Stone Cliff",
+    "time": "12:00AM-6:00PM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Stag Beetle",
+    "location": "Forest Jump Puzzle",
+    "time": "6:00AM-12:00AM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Blue Morpho",
+    "location": "Spirit Oak Pine Forest",
+    "time": "6:00AM-12:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Chestnut Tiger",
+    "location": "Bait the Insects Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Crimson Marsh Glider",
+    "location": "Bait the Insects Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Elegant Flower Beetle",
+    "location": "Whale Mountain Flower Field",
+    "time": "6:00AM-6:00PM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Golden Jewel Scarab",
+    "location": "Forest Jump Puzzle",
+    "time": "12:00PM-12:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Minotaur Beetle",
+    "location": "Onsen Mountain Ruins",
+    "time": "12:00AM-6:00PM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 8
+  },
+  {
+    "name": "Comet Moth",
+    "location": "Suburbs",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 8
+  },
+  {
+    "name": "Horned Beetle",
+    "location": "Fishing Village East Pier",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 8
+  },
+  {
+    "name": "Picasso Bug",
+    "location": "Flower Field",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 8
+  },
+  {
+    "name": "Spanish Moon Moth",
+    "location": "Spirit Oak Pine Forest",
+    "time": "12:00PM-12:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Cerulean Carpenter",
+    "location": "Spirit Oak Pine Forest",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Conehead Mantis",
+    "location": "Spirit Oak Pine Forest",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Golden Stag Beetle",
+    "location": "Spirit Oak Pine Forest",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Mother of Pearl",
+    "location": "Windmill Flower Field",
+    "time": "12:00AM-12:00PM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Rainbow Stag Beetle",
+    "location": "Bait the Insects Event Ruins",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Bagworm Moth",
+    "location": "Forest Deer Tower",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Hercules Beetle",
+    "location": "Forest Deer Tower",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Morpho Helena",
+    "location": "Forest Deer Tower",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Sunset Morpho",
+    "location": "Forest Deer Tower",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 10
+  }
+]

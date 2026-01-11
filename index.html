@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Checklist — Fish & Bugs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Fish & Bugs Checklist</h1>
+      <p class="subtitle">
+        Check off items as you collect them. State is saved locally.
+      </p>
+      <div class="controls-row">
+        <div class="controls-left">
+          <div class="filter-controls">
+            <label class="filter-available"
+              ><input id="showAvailableOnly" type="checkbox" /> Show available
+              now</label
+            >
+          </div>
+        </div>
+        <div class="controls-center">
+          <div id="heartopiaClock" class="heartopia-clock" aria-live="polite">
+            Heartopia: --:--
+          </div>
+        </div>
+        <div class="controls-right">
+          <div class="sort-controls">
+            <span>Sort:</span>
+            <button id="sortDefault" class="sort-btn active">Default</button>
+            <button id="sortLevel" class="sort-btn">By Level</button>
+            <button id="sortLocation" class="sort-btn">By Location</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <h2>Fish</h2>
+        <div class="panel-controls">
+          <button id="checkAllFish">Check all</button>
+          <button id="clearFish">Clear</button>
+        </div>
+        <ul id="fishList" class="checklist"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Bugs</h2>
+        <div class="panel-controls">
+          <button id="checkAllBugs">Check all</button>
+          <button id="clearBugs">Clear</button>
+        </div>
+        <ul id="bugsList" class="checklist"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

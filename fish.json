@@ -1,0 +1,590 @@
+[
+  {
+    "name": "Beltfish",
+    "location": "Zephyr Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Common Barbel",
+    "location": "Shallow River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Common Bleak",
+    "location": "Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Common Chub",
+    "location": "Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Common Shrimp",
+    "location": "East Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Common Whitefish",
+    "location": "Onsen Mountain Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Crucian Carp",
+    "location": "Suburban Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "European Perch",
+    "location": "River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "European Smelt",
+    "location": "Meadow Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Horse Mackerel",
+    "location": "Whale Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Minnow",
+    "location": "Tranquil River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Oriental Shrimp",
+    "location": "River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Sardine",
+    "location": "Ocean",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Schnieder",
+    "location": "Suburban Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Sea Bass",
+    "location": "Ocean",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Sea Stickleback",
+    "location": "Old Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Seahorse",
+    "location": "Whale Sea",
+    "time": "12:00AM-6:00PM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Skipjack Tuna",
+    "location": "Ocean",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Spined Loach",
+    "location": "Giantwood River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Striped Mullet",
+    "location": "Sea Fishing",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Tench",
+    "location": "Forest Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Anglerfish",
+    "location": "Sea Fishing",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Atlantic Pygmy Octopus",
+    "location": "Zephyr Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Common Octopus",
+    "location": "Sea Fishing",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "False Scad",
+    "location": "Zephyr Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Largemouth Bass",
+    "location": "Forest Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Stone Loach",
+    "location": "Suburban Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Turbot",
+    "location": "Sea Fishing",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Edible Frog",
+    "location": "Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Hermit Crab",
+    "location": "East Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Mud Sunfish",
+    "location": "Forest Lake",
+    "time": "6:00AM-12:00AM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Ruffe",
+    "location": "Onsen Mountain Lake",
+    "time": "12:00AM-6:00PM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Streber",
+    "location": "Rosy River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Tilapia",
+    "location": "Rivers",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Atlantic Salmon",
+    "location": "Whale Sea",
+    "time": "12:00PM-6:00AM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Burbot",
+    "location": "Tranquil River",
+    "time": "12:00PM-6:00PM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Clownfish",
+    "location": "Old Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Common Carp",
+    "location": "Rosy River",
+    "time": "12:00PM-12:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "European Crayfish",
+    "location": "Forest Lake",
+    "time": "6:00PM-12:00PM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "European Plaice",
+    "location": "Old Sea",
+    "time": "6:00PM-12:00PM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Goby",
+    "location": "East Sea",
+    "time": "6:00AM-6:00PM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Mussel",
+    "location": "Suburban Lake",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Rabbit Fish",
+    "location": "Ocean",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "River Crab",
+    "location": "Suburban Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Tadpole",
+    "location": "Onsen Mountain Lake",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Zander",
+    "location": "Giantwood River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Atlantic Mackerel",
+    "location": "Whale Sea",
+    "time": "12:00PM-6:00PM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Butterfly Koi",
+    "location": "Meadow Lake",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Common Rudd",
+    "location": "Suburban Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "European Flying Squid",
+    "location": "Sea Fishing",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "European Lobster",
+    "location": "Zephyr Sea",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Freshwater Blenny",
+    "location": "Rosy River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Red-Bellied Piranha",
+    "location": "Giantwood River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Trout",
+    "location": "Meadow Lake",
+    "time": "6:00PM-12:00PM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Chum Salmon",
+    "location": "Tranquil River",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Grayling",
+    "location": "Suburban Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Large Pearl Mussel",
+    "location": "Forest Lake",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Nursehound",
+    "location": "Sea Fishing",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Puffer Fish",
+    "location": "Old Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Tub Gurnard",
+    "location": "East Sea",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Blackspot Seabream",
+    "location": "Zephyr Sea",
+    "time": "6:00PM-12:00AM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "European Eel",
+    "location": "Old Sea",
+    "time": "6:00AM-12:00AM",
+    "weather": ["Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Giant Oarfish",
+    "location": "Sea Fishing",
+    "time": "6:00AM-6:00PM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Mediterranean Killifish",
+    "location": "Suburban Lake",
+    "time": "12:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Mottled Sculpin",
+    "location": "Onsen Mountain Lake",
+    "time": "6:00AM-12:00AM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Three-Spined Stickleback",
+    "location": "Shallow River",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Blue Ero Crayfish",
+    "location": "Forest Lake",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 8
+  },
+  {
+    "name": "European Mudminnow",
+    "location": "Suburban Lake",
+    "time": "12:00AM-12:00PM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 8
+  },
+  {
+    "name": "Golden King Crab",
+    "location": "Sea Fishing",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 8
+  },
+  {
+    "name": "Goldfish",
+    "location": "Meadow Lake",
+    "time": "6:00AM-12:00AM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 8
+  },
+  {
+    "name": "Haddcock",
+    "location": "East Sea",
+    "time": "12:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 8
+  },
+  {
+    "name": "Bluefin Tuna",
+    "location": "Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Huchen",
+    "location": "Giantwood River",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Moonfish",
+    "location": "Sea Fishing",
+    "time": "6:00PM-12:00AM",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Northern Pike",
+    "location": "Suburban Lake",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Ocean Sunfish",
+    "location": "East Sea",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Pumpkinseed",
+    "location": "Onsen Mountain Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Arctic Char",
+    "location": "Forest Lake",
+    "time": "12:00PM-12:00AM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Bluegill",
+    "location": "Onsen Mountain Lake",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Shortfin Mako Shark",
+    "location": "Sea Fishing",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Swordfish",
+    "location": "Sea Fishing",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Wels Catfish",
+    "location": "Meadow Lake",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "King Crab",
+    "location": "Whale Sea",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Seabream",
+    "location": "Zephyr Sea",
+    "time": "6:00PM-6:00AM",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 10
+  }
+]
