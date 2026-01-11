@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Heart icon">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ff9a4d"/>
+      <stop offset="60%" stop-color="#ff6a3a"/>
+      <stop offset="100%" stop-color="#ff4b2a"/>
+    </linearGradient>
+    <radialGradient id="gloss" cx="30%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+      <stop offset="45%" stop-color="rgba(255,255,255,0.35)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background circle for padding and readability -->
+  <rect width="64" height="64" rx="12" ry="12" fill="#fff" opacity="0"/>
+
+  <!-- heart group: slightly scaled and centered to avoid clipping -->
+  <g transform="translate(32,32) scale(1.28) translate(-32,-32)">
+    <path d="M32 50s-1.6-1.3-6.6-5.6C17.4 37.3 10 31.4 10 23.8 10 17.2 15.2 12 21.8 12c3.8 0 6.4 2 8.2 4.2C31.8 14 34.4 12 38.2 12 44.8 12 50 17.2 50 23.8c0 7.6-7.4 13.5-15.4 20.6C33.6 48.7 32 50 32 50z"
+      fill="url(#g1)" />
+
+    <!-- subtle inner shadow at bottom (aligned with heart) -->
+    <path d="M14 44 C24 56, 40 56, 50 44" stroke="rgba(0,0,0,0.14)" stroke-width="2" fill="none"/>
+  </g>
+</svg>
