@@ -169,12 +169,15 @@ function renderList(containerId, items, type, state) {
     const parts = []
     if (item.location) parts.push(item.location)
     if (item.time) parts.push(item.time)
-        if (item.weather && Array.isArray(item.weather)) {
-          const wset = new Set(item.weather.map(w => String(w).toLowerCase().trim()))
-          const hasAll = wset.has('sunny') && wset.has('rainy') && wset.has('rainbow')
-          if (hasAll) parts.push('Any Weather')
-          else parts.push(item.weather.join(', '))
-        }
+    if (item.weather && Array.isArray(item.weather)) {
+      const wset = new Set(
+        item.weather.map((w) => String(w).toLowerCase().trim())
+      )
+      const hasAll =
+        wset.has('sunny') && wset.has('rainy') && wset.has('rainbow')
+      if (hasAll) parts.push('Any Weather')
+      else parts.push(item.weather.join(', '))
+    }
     if (item.level !== undefined) parts.push('Level ' + item.level)
     meta.textContent = parts.join(' • ')
 
@@ -231,22 +234,12 @@ async function init() {
   }
   updateClock()
 
-  document.getElementById('checkAllFish').addEventListener('click', () => {
-    getSorted(fishData).forEach((it) => (state[makeId('fish', it)] = true))
-    saveState(state)
-    renderLists()
-  })
   document.getElementById('clearFish').addEventListener('click', () => {
     getSorted(fishData).forEach((it) => (state[makeId('fish', it)] = false))
     saveState(state)
     renderLists()
   })
 
-  document.getElementById('checkAllBugs').addEventListener('click', () => {
-    getSorted(bugsData).forEach((it) => (state[makeId('bugs', it)] = true))
-    saveState(state)
-    renderLists()
-  })
   document.getElementById('clearBugs').addEventListener('click', () => {
     getSorted(bugsData).forEach((it) => (state[makeId('bugs', it)] = false))
     saveState(state)

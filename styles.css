@@ -43,6 +43,22 @@ header {
 .panel-controls {
   margin-bottom: 8px;
 }
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.panel-header > button {
+  margin-right: 0;
+}
+
+.panel-header h2 {
+  margin: 0;
+}
 .sort-controls {
   margin-top: 8px;
   display: flex;
