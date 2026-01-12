@@ -36,12 +36,17 @@
       </p> -->
       <div class="controls-row">
         <div class="controls-left">
-          <div class="filter-controls">
-            <!-- <label class="filter-available"
-              ><input id="showAvailableOnly" type="checkbox" /> Show available
-              now</label
-            > -->
-          </div>
+            <div class="tab-controls">
+              <button id="tabAll" class="tab-btn active">All</button>
+              <button id="tabFish" class="tab-btn">Fish</button>
+              <button id="tabBugs" class="tab-btn">Bugs</button>
+            </div>
+            <div class="filter-controls">
+              <!-- <label class="filter-available"
+                ><input id="showAvailableOnly" type="checkbox" /> Show available
+                now</label
+              > -->
+            </div>
         </div>
         <div class="controls-center">
           <!-- <div id="heartopiaClock" class="heartopia-clock" aria-live="polite">
@@ -63,7 +68,7 @@
     </header>
 
     <main class="container">
-      <section class="panel">
+      <section id="panel-fish" class="panel">
         <div class="panel-header">
           <h2>Fish</h2>
           <div class="panel-actions">
@@ -76,7 +81,7 @@
         <ul id="fishList" class="checklist"></ul>
       </section>
 
-      <section class="panel">
+      <section id="panel-bugs" class="panel">
         <div class="panel-header">
           <h2>Bugs</h2>
           <div class="panel-actions">

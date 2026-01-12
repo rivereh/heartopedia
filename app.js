@@ -277,6 +277,35 @@ async function init() {
   const fishData = fish || []
   const bugsData = bugs || []
 
+  // active tab state: 'fish' | 'bugs' | 'all'
+  let activeTab = 'all'
+  function updateTabUI() {
+    const tabF = document.getElementById('tabFish')
+    const tabB = document.getElementById('tabBugs')
+    const tabA = document.getElementById('tabAll')
+    const panelF = document.getElementById('panel-fish')
+    const panelB = document.getElementById('panel-bugs')
+    if (tabF) tabF.classList.toggle('active', activeTab === 'fish')
+    if (tabB) tabB.classList.toggle('active', activeTab === 'bugs')
+    if (tabA) tabA.classList.toggle('active', activeTab === 'all')
+    // show/hide panels: 'all' shows both
+    if (panelF) panelF.classList.toggle('hidden', activeTab === 'bugs')
+    if (panelB) panelB.classList.toggle('hidden', activeTab === 'fish')
+    // toggle container width class when in all-mode
+    const cont = document.querySelector('.container')
+    if (cont) cont.classList.toggle('all-mode', activeTab === 'all')
+  }
+
+  // wire tab buttons
+  const tabFishBtn = document.getElementById('tabFish')
+  const tabBugsBtn = document.getElementById('tabBugs')
+  if (tabFishBtn) tabFishBtn.addEventListener('click', () => { activeTab = 'fish'; updateTabUI(); })
+  if (tabBugsBtn) tabBugsBtn.addEventListener('click', () => { activeTab = 'bugs'; updateTabUI(); })
+  const tabAllBtn = document.getElementById('tabAll')
+  if (tabAllBtn) tabAllBtn.addEventListener('click', () => { activeTab = 'all'; updateTabUI(); })
+  // ensure initial UI matches activeTab
+  updateTabUI()
+
   function updateActiveButtons() {
     // per-list level buttons
     const fBtn = document.getElementById('sortLevelFish')
@@ -362,9 +391,13 @@ async function init() {
       for (const opt of Array.from(locFishEl.options)) {
         const v = opt.value
         if (!v || v === 'none' || v === 'location-all') continue
-        const itemsInLoc = (fishData || []).filter((it) => (it.location || '') === v)
+        const itemsInLoc = (fishData || []).filter(
+          (it) => (it.location || '') === v
+        )
         const total = itemsInLoc.length
-        const collected = itemsInLoc.filter((it) => isCompleted(state, makeId('fish', it))).length
+        const collected = itemsInLoc.filter((it) =>
+          isCompleted(state, makeId('fish', it))
+        ).length
         opt.textContent = v + (total > 0 && collected === total ? ' ✓' : '')
       }
     }
@@ -373,9 +406,13 @@ async function init() {
       for (const opt of Array.from(locBugsEl.options)) {
         const v = opt.value
         if (!v || v === 'none' || v === 'location-all') continue
-        const itemsInLoc = (bugsData || []).filter((it) => (it.location || '') === v)
+        const itemsInLoc = (bugsData || []).filter(
+          (it) => (it.location || '') === v
+        )
         const total = itemsInLoc.length
-        const collected = itemsInLoc.filter((it) => isCompleted(state, makeId('bugs', it))).length
+        const collected = itemsInLoc.filter((it) =>
+          isCompleted(state, makeId('bugs', it))
+        ).length
         opt.textContent = v + (total > 0 && collected === total ? ' ✓' : '')
       }
     }
