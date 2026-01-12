@@ -22,6 +22,17 @@ function saveState(s) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(s))
 }
 
+function getStars(state, id) {
+  const v = state[id]
+  if (typeof v === 'number') return Math.max(0, Math.min(5, Math.floor(v)))
+  if (v === true) return 1
+  return 0
+}
+
+function isCompleted(state, id) {
+  return getStars(state, id) >= 5
+}
+
 function makeId(type, item) {
   const key = item.name || item.id || String(item)
   return `${type}:${key}`
@@ -185,23 +196,10 @@ function renderList(containerId, items, type, state) {
   container.innerHTML = ''
   items.forEach((item) => {
     const id = makeId(type, item)
-    const checked = !!state[id]
+    const stars = getStars(state, id)
 
     const li = document.createElement('li')
-    if (checked) li.classList.add('collected')
-    const cb = document.createElement('input')
-    cb.type = 'checkbox'
-    cb.checked = checked
-    cb.addEventListener('change', (e) => {
-      state[id] = e.target.checked
-      saveState(state)
-      // notify listeners that state changed so UI can update (move collected, mark locations)
-      try {
-        document.dispatchEvent(new CustomEvent('heartopiaStateChanged'))
-      } catch (err) {
-        // ignore
-      }
-    })
+    if (isCompleted(state, id)) li.classList.add('collected')
 
     const content = document.createElement('div')
     content.className = 'item-content'
@@ -227,10 +225,43 @@ function renderList(containerId, items, type, state) {
     if (item.level !== undefined) parts.push('Level ' + item.level)
     meta.textContent = parts.join(' • ')
 
+    // star rating control (5 stars)
+    const starWrap = document.createElement('div')
+    starWrap.className = 'star-rating'
+    starWrap.setAttribute('role', 'radiogroup')
+    for (let i = 1; i <= 5; i++) {
+      const s = document.createElement('span')
+      s.className = 'star' + (i <= stars ? ' filled' : '')
+      s.dataset.value = String(i)
+      s.setAttribute('role', 'radio')
+      s.setAttribute('aria-checked', String(i <= stars))
+      s.tabIndex = 0
+      s.textContent = '★'
+      s.addEventListener('click', (e) => {
+        const cur = getStars(state, id)
+        const val = i
+        const newVal = cur === val ? 0 : val
+        state[id] = newVal
+        saveState(state)
+        try {
+          document.dispatchEvent(new CustomEvent('heartopiaStateChanged'))
+        } catch (err) {}
+      })
+      s.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          s.click()
+        }
+      })
+      starWrap.appendChild(s)
+    }
+
+    // place stars under the title (left-aligned)
     content.appendChild(title)
+    content.appendChild(starWrap)
     content.appendChild(meta)
 
-    li.appendChild(cb)
+    // starWrap is placed above title/meta
     li.appendChild(content)
     container.appendChild(li)
   })
@@ -305,7 +336,7 @@ async function init() {
       const col = []
       f.forEach((it) => {
         const id = makeId('fish', it)
-        if (state[id]) col.push(it)
+        if (isCompleted(state, id)) col.push(it)
         else un.push(it)
       })
       fToRender = un.concat(col)
@@ -316,7 +347,7 @@ async function init() {
       const col = []
       b.forEach((it) => {
         const id = makeId('bugs', it)
-        if (state[id]) col.push(it)
+        if (isCompleted(state, id)) col.push(it)
         else un.push(it)
       })
       bToRender = un.concat(col)
@@ -331,13 +362,9 @@ async function init() {
       for (const opt of Array.from(locFishEl.options)) {
         const v = opt.value
         if (!v || v === 'none' || v === 'location-all') continue
-        const itemsInLoc = (fishData || []).filter(
-          (it) => (it.location || '') === v
-        )
+        const itemsInLoc = (fishData || []).filter((it) => (it.location || '') === v)
         const total = itemsInLoc.length
-        const collected = itemsInLoc.filter(
-          (it) => !!state[makeId('fish', it)]
-        ).length
+        const collected = itemsInLoc.filter((it) => isCompleted(state, makeId('fish', it))).length
         opt.textContent = v + (total > 0 && collected === total ? ' ✓' : '')
       }
     }
@@ -346,13 +373,9 @@ async function init() {
       for (const opt of Array.from(locBugsEl.options)) {
         const v = opt.value
         if (!v || v === 'none' || v === 'location-all') continue
-        const itemsInLoc = (bugsData || []).filter(
-          (it) => (it.location || '') === v
-        )
+        const itemsInLoc = (bugsData || []).filter((it) => (it.location || '') === v)
         const total = itemsInLoc.length
-        const collected = itemsInLoc.filter(
-          (it) => !!state[makeId('bugs', it)]
-        ).length
+        const collected = itemsInLoc.filter((it) => isCompleted(state, makeId('bugs', it))).length
         opt.textContent = v + (total > 0 && collected === total ? ' ✓' : '')
       }
     }
