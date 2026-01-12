@@ -219,6 +219,12 @@ button:active {
   padding: 6px 8px;
   border-radius: 6px;
 }
+.checklist li.collected {
+  opacity: 0.45;
+}
+.checklist li.collected .item-title {
+  text-decoration: line-through;
+}
 .checklist li:nth-child(odd) {
   background: #fbfdff;
 }

@@ -188,12 +188,19 @@ function renderList(containerId, items, type, state) {
     const checked = !!state[id]
 
     const li = document.createElement('li')
+    if (checked) li.classList.add('collected')
     const cb = document.createElement('input')
     cb.type = 'checkbox'
     cb.checked = checked
     cb.addEventListener('change', (e) => {
       state[id] = e.target.checked
       saveState(state)
+      // notify listeners that state changed so UI can update (move collected, mark locations)
+      try {
+        document.dispatchEvent(new CustomEvent('heartopiaStateChanged'))
+      } catch (err) {
+        // ignore
+      }
     })
 
     const content = document.createElement('div')
@@ -290,8 +297,65 @@ async function init() {
         (showAvailableOnly ? isAvailableNow(it) : true) &&
         (bugsLocationFilter ? (it.location || '') === bugsLocationFilter : true)
     )
-    renderList('fishList', f, 'fish', state)
-    renderList('bugsList', b, 'bugs', state)
+    // If hide-collected is enabled, move collected items to the bottom
+    const hideCollected = !!state.hideCollected
+    let fToRender = f
+    if (hideCollected) {
+      const un = []
+      const col = []
+      f.forEach((it) => {
+        const id = makeId('fish', it)
+        if (state[id]) col.push(it)
+        else un.push(it)
+      })
+      fToRender = un.concat(col)
+    }
+    let bToRender = b
+    if (hideCollected) {
+      const un = []
+      const col = []
+      b.forEach((it) => {
+        const id = makeId('bugs', it)
+        if (state[id]) col.push(it)
+        else un.push(it)
+      })
+      bToRender = un.concat(col)
+    }
+
+    renderList('fishList', fToRender, 'fish', state)
+    renderList('bugsList', bToRender, 'bugs', state)
+
+    // Update per-location completion markers in the selects
+    const locFishEl = document.getElementById('sortLocationFish')
+    if (locFishEl) {
+      for (const opt of Array.from(locFishEl.options)) {
+        const v = opt.value
+        if (!v || v === 'none' || v === 'location-all') continue
+        const itemsInLoc = (fishData || []).filter(
+          (it) => (it.location || '') === v
+        )
+        const total = itemsInLoc.length
+        const collected = itemsInLoc.filter(
+          (it) => !!state[makeId('fish', it)]
+        ).length
+        opt.textContent = v + (total > 0 && collected === total ? ' ✓' : '')
+      }
+    }
+    const locBugsEl = document.getElementById('sortLocationBugs')
+    if (locBugsEl) {
+      for (const opt of Array.from(locBugsEl.options)) {
+        const v = opt.value
+        if (!v || v === 'none' || v === 'location-all') continue
+        const itemsInLoc = (bugsData || []).filter(
+          (it) => (it.location || '') === v
+        )
+        const total = itemsInLoc.length
+        const collected = itemsInLoc.filter(
+          (it) => !!state[makeId('bugs', it)]
+        ).length
+        opt.textContent = v + (total > 0 && collected === total ? ' ✓' : '')
+      }
+    }
     updateActiveButtons()
   }
 
@@ -426,6 +490,20 @@ async function init() {
       renderLists()
     })
   }
+
+  // hide-collected checkbox: persist in state and re-render when toggled
+  const hideCheckbox = document.getElementById('hideCollected')
+  if (hideCheckbox) {
+    hideCheckbox.checked = !!state.hideCollected
+    hideCheckbox.addEventListener('change', (e) => {
+      state.hideCollected = !!e.target.checked
+      saveState(state)
+      renderLists()
+    })
+  }
+
+  // re-render when other parts of UI update state (checkboxes inside lists)
+  document.addEventListener('heartopiaStateChanged', renderLists)
 
   // refresh clock every 60s and availability when filter active
   setInterval(() => {
