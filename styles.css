@@ -100,6 +100,11 @@ header {
 .panel-header h2 {
   margin: 0;
 }
+.panel-header .panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .sort-controls {
   margin-top: 8px;
   display: flex;
@@ -162,6 +167,14 @@ header {
 }
 .sort-btn {
   white-space: nowrap;
+}
+.sort-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+  color: var(--accent);
+  cursor: pointer;
 }
 .filter-controls {
   display: flex;

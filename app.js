@@ -27,9 +27,15 @@ function makeId(type, item) {
   return `${type}:${key}`
 }
 
-let sortMode = 'default'
-
 let showAvailableOnly = false
+
+// per-list sort and filters
+let fishSortMode = 'default'
+let bugsSortMode = 'default'
+let fishLocationFilter = null
+let bugsLocationFilter = null
+let fishSortSecondaryLevel = false
+let bugsSortSecondaryLevel = false
 
 // Heartopia time: PST + 3 hours. PST is UTC-8, so heartopia = UTC-5
 const HEARTOPIA_UTC_OFFSET = -5
@@ -134,10 +140,43 @@ function compareLocation(a, b) {
 }
 
 function getSorted(arr) {
+  // fallback to default global behavior (not used for per-list sorting)
   const copy = (arr || []).slice()
-  if (sortMode === 'default') copy.sort(compareLevelLocationName)
-  else if (sortMode === 'level') copy.sort(compareLevel)
-  else if (sortMode === 'location') copy.sort(compareLocation)
+  copy.sort(compareLevelLocationName)
+  return copy
+}
+
+function getSortedByMode(arr, mode, secondaryLevel) {
+  const copy = (arr || []).slice()
+  copy.sort((a, b) => {
+    if (mode === 'default') {
+      return compareLevelLocationName(a, b)
+    }
+    if (mode === 'level') {
+      const r = compareLevel(a, b)
+      if (r !== 0) return r
+      return (a.name || '').localeCompare(b.name || '', undefined, {
+        sensitivity: 'base',
+      })
+    }
+    if (mode === 'location') {
+      // Always sort by location first, then by level, then by name
+      const r = (a.location || '')
+        .toString()
+        .localeCompare((b.location || '').toString(), undefined, {
+          sensitivity: 'base',
+        })
+      if (r !== 0) return r
+      const s = compareLevel(a, b)
+      if (s !== 0) return s
+      return (a.name || '').localeCompare(b.name || '', undefined, {
+        sensitivity: 'base',
+      })
+    }
+    return (a.name || '').localeCompare(b.name || '', undefined, {
+      sensitivity: 'base',
+    })
+  })
   return copy
 }
 
@@ -201,24 +240,55 @@ async function init() {
   const bugsData = bugs || []
 
   function updateActiveButtons() {
-    const map = {
-      default: 'sortDefault',
-      level: 'sortLevel',
-      location: 'sortLocation',
+    // per-list level buttons
+    const fBtn = document.getElementById('sortLevelFish')
+    if (fBtn) {
+      if (fishSortMode === 'level' || fishSortSecondaryLevel)
+        fBtn.classList.add('active')
+      else fBtn.classList.remove('active')
     }
-    Object.values(map).forEach((id) =>
-      document.getElementById(id)?.classList.remove('active')
-    )
-    const activeId = map[sortMode] || 'sortDefault'
-    document.getElementById(activeId)?.classList.add('active')
+    const bBtn = document.getElementById('sortLevelBugs')
+    if (bBtn) {
+      if (bugsSortMode === 'level' || bugsSortSecondaryLevel)
+        bBtn.classList.add('active')
+      else bBtn.classList.remove('active')
+    }
+
+    // per-list select reflect
+    const sf = document.getElementById('sortLocationFish')
+    if (sf) {
+      if (fishLocationFilter) sf.value = fishLocationFilter
+      else if (fishSortMode === 'location') sf.value = 'location-all'
+      else sf.value = 'none'
+    }
+    const sb = document.getElementById('sortLocationBugs')
+    if (sb) {
+      if (bugsLocationFilter) sb.value = bugsLocationFilter
+      else if (bugsSortMode === 'location') sb.value = 'location-all'
+      else sb.value = 'none'
+    }
   }
 
   function renderLists() {
-    const f = getSorted(fishData).filter((it) =>
-      showAvailableOnly ? isAvailableNow(it) : true
+    const fSorted = getSortedByMode(
+      fishData,
+      fishSortMode,
+      fishSortSecondaryLevel
     )
-    const b = getSorted(bugsData).filter((it) =>
-      showAvailableOnly ? isAvailableNow(it) : true
+    const f = fSorted.filter(
+      (it) =>
+        (showAvailableOnly ? isAvailableNow(it) : true) &&
+        (fishLocationFilter ? (it.location || '') === fishLocationFilter : true)
+    )
+    const bSorted = getSortedByMode(
+      bugsData,
+      bugsSortMode,
+      bugsSortSecondaryLevel
+    )
+    const b = bSorted.filter(
+      (it) =>
+        (showAvailableOnly ? isAvailableNow(it) : true) &&
+        (bugsLocationFilter ? (it.location || '') === bugsLocationFilter : true)
     )
     renderList('fishList', f, 'fish', state)
     renderList('bugsList', b, 'bugs', state)
@@ -234,30 +304,120 @@ async function init() {
   }
   updateClock()
 
-  document.getElementById('clearFish').addEventListener('click', () => {
-    getSorted(fishData).forEach((it) => (state[makeId('fish', it)] = false))
-    saveState(state)
-    renderLists()
-  })
+  // Removed per-panel Clear handlers (buttons removed from HTML)
+  // per-list sortLevel buttons
+  const slFish = document.getElementById('sortLevelFish')
+  if (slFish) {
+    slFish.addEventListener('click', () => {
+      // If a specific location filter is active, toggle primary level sort for the filtered list
+      if (fishLocationFilter) {
+        if (fishSortMode === 'level') fishSortMode = 'default'
+        else fishSortMode = 'level'
+        // clear secondary flag when toggling primary
+        fishSortSecondaryLevel = false
+      } else if (fishSortMode === 'location') {
+        // if we're grouping by location (Location All), toggle secondary-level within groups
+        fishSortSecondaryLevel = !fishSortSecondaryLevel
+      } else {
+        if (fishSortMode === 'level') {
+          fishSortMode = 'default'
+        } else {
+          fishSortMode = 'level'
+        }
+        fishSortSecondaryLevel = false
+      }
+      renderLists()
+    })
+  }
+  const slBugs = document.getElementById('sortLevelBugs')
+  if (slBugs) {
+    slBugs.addEventListener('click', () => {
+      if (bugsLocationFilter) {
+        if (bugsSortMode === 'level') bugsSortMode = 'default'
+        else bugsSortMode = 'level'
+        bugsSortSecondaryLevel = false
+      } else if (bugsSortMode === 'location') {
+        bugsSortSecondaryLevel = !bugsSortSecondaryLevel
+      } else {
+        if (bugsSortMode === 'level') {
+          bugsSortMode = 'default'
+        } else {
+          bugsSortMode = 'level'
+        }
+        bugsSortSecondaryLevel = false
+      }
+      renderLists()
+    })
+  }
 
-  document.getElementById('clearBugs').addEventListener('click', () => {
-    getSorted(bugsData).forEach((it) => (state[makeId('bugs', it)] = false))
-    saveState(state)
-    renderLists()
-  })
+  // populate per-list location selects
+  const locFish = document.getElementById('sortLocationFish')
+  if (locFish) {
+    const locSet = new Set()
+    ;(fishData || []).forEach((it) => it.location && locSet.add(it.location))
+    const locs = Array.from(locSet)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+    locs.forEach((l) => {
+      const opt = document.createElement('option')
+      opt.value = l
+      opt.textContent = l
+      locFish.appendChild(opt)
+    })
+    locFish.addEventListener('change', (e) => {
+      const v = e.target.value
+      if (v === 'none') {
+        // reset to normal/default: clear filter and revert to default sort
+        fishLocationFilter = null
+        fishSortMode = 'default'
+        fishSortSecondaryLevel = false
+      } else if (v === 'location-all') {
+        // sort by location but do not filter
+        fishLocationFilter = null
+        fishSortMode = 'location'
+      } else {
+        // specific location selected -> filter to that location
+        // and sort the filtered list by level by default
+        fishLocationFilter = v
+        fishSortMode = 'level'
+        fishSortSecondaryLevel = false
+      }
+      renderLists()
+    })
+  }
 
-  document.getElementById('sortDefault').addEventListener('click', () => {
-    sortMode = 'default'
-    renderLists()
-  })
-  document.getElementById('sortLevel').addEventListener('click', () => {
-    sortMode = 'level'
-    renderLists()
-  })
-  document.getElementById('sortLocation').addEventListener('click', () => {
-    sortMode = 'location'
-    renderLists()
-  })
+  const locBugs = document.getElementById('sortLocationBugs')
+  if (locBugs) {
+    const locSet = new Set()
+    ;(bugsData || []).forEach((it) => it.location && locSet.add(it.location))
+    const locs = Array.from(locSet)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+    locs.forEach((l) => {
+      const opt = document.createElement('option')
+      opt.value = l
+      opt.textContent = l
+      locBugs.appendChild(opt)
+    })
+    locBugs.addEventListener('change', (e) => {
+      const v = e.target.value
+      if (v === 'none') {
+        bugsLocationFilter = null
+        bugsSortMode = 'default'
+        bugsSortSecondaryLevel = false
+      } else if (v === 'location-all') {
+        bugsLocationFilter = null
+        bugsSortMode = 'location'
+      } else {
+        // specific location selected -> filter to that location
+        // and sort the filtered list by level by default
+        bugsLocationFilter = v
+        bugsSortMode = 'level'
+        bugsSortSecondaryLevel = false
+      }
+      renderLists()
+    })
+  }
 
   const availCheckbox = document.getElementById('showAvailableOnly')
   if (availCheckbox) {

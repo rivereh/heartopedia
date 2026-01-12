@@ -50,10 +50,7 @@
         </div>
         <div class="controls-right">
           <div class="sort-controls">
-            <span>Sort:</span>
-            <button id="sortDefault" class="sort-btn active">Default</button>
-            <button id="sortLevel" class="sort-btn">By Level</button>
-            <button id="sortLocation" class="sort-btn">By Location</button>
+            <!-- <span>Sort:</span> -->
           </div>
         </div>
       </div>
@@ -63,7 +60,12 @@
       <section class="panel">
         <div class="panel-header">
           <h2>Fish</h2>
-          <button id="clearFish">Clear</button>
+          <div class="panel-actions">
+            <select id="sortLocationFish" class="sort-select">
+              <option value="none">Location</option>
+              <option value="location-all">Location (All)</option>
+            </select>
+          </div>
         </div>
         <ul id="fishList" class="checklist"></ul>
       </section>
@@ -71,7 +73,12 @@
       <section class="panel">
         <div class="panel-header">
           <h2>Bugs</h2>
-          <button id="clearBugs">Clear</button>
+          <div class="panel-actions">
+            <select id="sortLocationBugs" class="sort-select">
+              <option value="none">Location</option>
+              <option value="location-all">Location (All)</option>
+            </select>
+          </div>
         </div>
         <ul id="bugsList" class="checklist"></ul>
       </section>
