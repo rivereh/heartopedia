@@ -165,9 +165,12 @@ header {
 .tab-btn.active {
   background: var(--accent);
   color: #fff;
-  border-color: rgba(0,0,0,0.04);
+  border-color: rgba(0, 0, 0, 0.04);
 }
-.misc-controls { display:flex; align-items:center; }
+.misc-controls {
+  display: flex;
+  align-items: center;
+}
 
 .controls-row {
   display: flex;
@@ -261,7 +264,9 @@ button:active {
 .checklist li {
   border-bottom: 1px solid rgba(20, 30, 60, 0.04);
 }
-.panel.hidden { display: none; }
+.panel.hidden {
+  display: none;
+}
 .checklist input[type='checkbox'] {
   margin-right: 10px;
   width: 18px;

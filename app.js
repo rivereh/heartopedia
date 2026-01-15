@@ -43,10 +43,13 @@ let showAvailableOnly = false
 // per-list sort and filters
 let fishSortMode = 'default'
 let bugsSortMode = 'default'
+let birdsSortMode = 'default'
 let fishLocationFilter = null
 let bugsLocationFilter = null
+let birdsLocationFilter = null
 let fishSortSecondaryLevel = false
 let bugsSortSecondaryLevel = false
+let birdsSortSecondaryLevel = false
 
 // Heartopia time: PST + 3 hours. PST is UTC-8, so heartopia = UTC-5
 const HEARTOPIA_UTC_OFFSET = -5
@@ -269,28 +272,46 @@ function renderList(containerId, items, type, state) {
 
 async function init() {
   const state = loadState()
-  const [fish, bugs] = await Promise.all([
+  const [fish, bugs, birds] = await Promise.all([
     loadJSON('fish.json'),
     loadJSON('bugs.json'),
+    loadJSON('birds.json'),
   ])
 
   const fishData = fish || []
   const bugsData = bugs || []
+  const birdsData = birds || []
 
   // active tab state: 'fish' | 'bugs' | 'all'
   let activeTab = 'all'
   function updateTabUI() {
     const tabF = document.getElementById('tabFish')
     const tabB = document.getElementById('tabBugs')
+    const tabBr = document.getElementById('tabBirds')
     const tabA = document.getElementById('tabAll')
     const panelF = document.getElementById('panel-fish')
     const panelB = document.getElementById('panel-bugs')
+    const panelBr = document.getElementById('panel-birds')
     if (tabF) tabF.classList.toggle('active', activeTab === 'fish')
     if (tabB) tabB.classList.toggle('active', activeTab === 'bugs')
+    if (tabBr) tabBr.classList.toggle('active', activeTab === 'birds')
     if (tabA) tabA.classList.toggle('active', activeTab === 'all')
-    // show/hide panels: 'all' shows both
-    if (panelF) panelF.classList.toggle('hidden', activeTab === 'bugs')
-    if (panelB) panelB.classList.toggle('hidden', activeTab === 'fish')
+    // show/hide panels: 'all' shows all lists; otherwise show only the active tab
+    if (panelF)
+      panelF.classList.toggle(
+        'hidden',
+        activeTab !== 'fish' && activeTab !== 'all'
+      )
+    if (panelB)
+      panelB.classList.toggle(
+        'hidden',
+        activeTab !== 'bugs' && activeTab !== 'all'
+      )
+    if (panelBr)
+      panelBr.classList.toggle(
+        'hidden',
+        activeTab !== 'birds' && activeTab !== 'all'
+      )
     // toggle container width class when in all-mode
     const cont = document.querySelector('.container')
     if (cont) cont.classList.toggle('all-mode', activeTab === 'all')
@@ -299,10 +320,28 @@ async function init() {
   // wire tab buttons
   const tabFishBtn = document.getElementById('tabFish')
   const tabBugsBtn = document.getElementById('tabBugs')
-  if (tabFishBtn) tabFishBtn.addEventListener('click', () => { activeTab = 'fish'; updateTabUI(); })
-  if (tabBugsBtn) tabBugsBtn.addEventListener('click', () => { activeTab = 'bugs'; updateTabUI(); })
+  const tabBirdsBtn = document.getElementById('tabBirds')
+  if (tabFishBtn)
+    tabFishBtn.addEventListener('click', () => {
+      activeTab = 'fish'
+      updateTabUI()
+    })
+  if (tabBugsBtn)
+    tabBugsBtn.addEventListener('click', () => {
+      activeTab = 'bugs'
+      updateTabUI()
+    })
+  if (tabBirdsBtn)
+    tabBirdsBtn.addEventListener('click', () => {
+      activeTab = 'birds'
+      updateTabUI()
+    })
   const tabAllBtn = document.getElementById('tabAll')
-  if (tabAllBtn) tabAllBtn.addEventListener('click', () => { activeTab = 'all'; updateTabUI(); })
+  if (tabAllBtn)
+    tabAllBtn.addEventListener('click', () => {
+      activeTab = 'all'
+      updateTabUI()
+    })
   // ensure initial UI matches activeTab
   updateTabUI()
 
@@ -334,6 +373,12 @@ async function init() {
       else if (bugsSortMode === 'location') sb.value = 'location-all'
       else sb.value = 'none'
     }
+    const sbr = document.getElementById('sortLocationBirds')
+    if (sbr) {
+      if (birdsLocationFilter) sbr.value = birdsLocationFilter
+      else if (birdsSortMode === 'location') sbr.value = 'location-all'
+      else sbr.value = 'none'
+    }
   }
 
   function renderLists() {
@@ -356,6 +401,18 @@ async function init() {
       (it) =>
         (showAvailableOnly ? isAvailableNow(it) : true) &&
         (bugsLocationFilter ? (it.location || '') === bugsLocationFilter : true)
+    )
+    const brSorted = getSortedByMode(
+      birdsData,
+      birdsSortMode,
+      birdsSortSecondaryLevel
+    )
+    const br = brSorted.filter(
+      (it) =>
+        (showAvailableOnly ? isAvailableNow(it) : true) &&
+        (birdsLocationFilter
+          ? (it.location || '') === birdsLocationFilter
+          : true)
     )
     // If hide-collected is enabled, move collected items to the bottom
     const hideCollected = !!state.hideCollected
@@ -381,9 +438,21 @@ async function init() {
       })
       bToRender = un.concat(col)
     }
+    let brToRender = br
+    if (hideCollected) {
+      const un = []
+      const col = []
+      br.forEach((it) => {
+        const id = makeId('birds', it)
+        if (isCompleted(state, id)) col.push(it)
+        else un.push(it)
+      })
+      brToRender = un.concat(col)
+    }
 
     renderList('fishList', fToRender, 'fish', state)
     renderList('bugsList', bToRender, 'bugs', state)
+    renderList('birdsList', brToRender, 'birds', state)
 
     // Update per-location completion markers in the selects
     const locFishEl = document.getElementById('sortLocationFish')
@@ -412,6 +481,21 @@ async function init() {
         const total = itemsInLoc.length
         const collected = itemsInLoc.filter((it) =>
           isCompleted(state, makeId('bugs', it))
+        ).length
+        opt.textContent = v + (total > 0 && collected === total ? ' ✓' : '')
+      }
+    }
+    const locBirdsEl = document.getElementById('sortLocationBirds')
+    if (locBirdsEl) {
+      for (const opt of Array.from(locBirdsEl.options)) {
+        const v = opt.value
+        if (!v || v === 'none' || v === 'location-all') continue
+        const itemsInLoc = (birdsData || []).filter(
+          (it) => (it.location || '') === v
+        )
+        const total = itemsInLoc.length
+        const collected = itemsInLoc.filter((it) =>
+          isCompleted(state, makeId('birds', it))
         ).length
         opt.textContent = v + (total > 0 && collected === total ? ' ✓' : '')
       }
@@ -538,6 +622,37 @@ async function init() {
         bugsLocationFilter = v
         bugsSortMode = 'level'
         bugsSortSecondaryLevel = false
+      }
+      renderLists()
+    })
+  }
+
+  const locBirds = document.getElementById('sortLocationBirds')
+  if (locBirds) {
+    const locSet = new Set()
+    ;(birdsData || []).forEach((it) => it.location && locSet.add(it.location))
+    const locs = Array.from(locSet)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+    locs.forEach((l) => {
+      const opt = document.createElement('option')
+      opt.value = l
+      opt.textContent = l
+      locBirds.appendChild(opt)
+    })
+    locBirds.addEventListener('change', (e) => {
+      const v = e.target.value
+      if (v === 'none') {
+        birdsLocationFilter = null
+        birdsSortMode = 'default'
+        birdsSortSecondaryLevel = false
+      } else if (v === 'location-all') {
+        birdsLocationFilter = null
+        birdsSortMode = 'location'
+      } else {
+        birdsLocationFilter = v
+        birdsSortMode = 'level'
+        birdsSortSecondaryLevel = false
       }
       renderLists()
     })

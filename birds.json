@@ -1,0 +1,429 @@
+[
+  {
+    "name": "Blue Peafowl",
+    "location": "Nest of Hundreds Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Blue-and-Yellow Macaw",
+    "location": "Nest of Hundreds Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Eurasian Bullfinch",
+    "location": "Suburbs",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Eurasian Chaffinch",
+    "location": "Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Eurasian Collared Dove",
+    "location": "Home Lots",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Eurasian Wren",
+    "location": "Forest",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Eurasian Robin",
+    "location": "Central Area",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Great Tit",
+    "location": "Onsen Mountain",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Greater Flamingo",
+    "location": "Waterside",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Long-Tailed Tit",
+    "location": "Blanc's Head",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Mallard",
+    "location": "Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Pied Imperial Pigeon",
+    "location": "Fishing Village",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 1
+  },
+  {
+    "name": "Bearded Reedling",
+    "location": "Onsen Mountain",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Eurasian Nuthatch",
+    "location": "Fishing Village",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Eurasian Wigeon",
+    "location": "River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Pink-Necked Green Pigeon",
+    "location": "Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Seagull",
+    "location": "Seaside",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Stock Dove",
+    "location": "Central Area",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Wonga Pigeon",
+    "location": "Forest",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Woodchat Shrike",
+    "location": "Suburbs",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 2
+  },
+  {
+    "name": "Audouin's Gull",
+    "location": "Whale Sea, Purple Light Beach",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Double-Barred Finch",
+    "location": "Fishing Village Lighthouse",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Eurasian Golden Oriole",
+    "location": "Rosy River, Home Lots",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "European Shag",
+    "location": "Forest Island near the Lighthouse",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "King Eider",
+    "location": "River",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Red-and-Green Macaw",
+    "location": "Nest of Hundreds Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Ruddy Shelduck",
+    "location": "Suburban Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Silver-Throated Tit",
+    "location": "Forest Jump Puzzle",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 3
+  },
+  {
+    "name": "Lady Amherst Pheasant",
+    "location": "Onsen Mountain Ruins",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Pine Grosbeak",
+    "location": "Forest Island",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Przevalski's Parrotbill",
+    "location": "Fishing Village Square",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Regent Bowerbird",
+    "location": "Spirit Oak Pine Forest",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Smew",
+    "location": "Forest Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "Wallace Fruit Dove",
+    "location": "Windmill Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "White Wagtail",
+    "location": "Purple Light Beach",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 4
+  },
+  {
+    "name": "African Olive Pigeon",
+    "location": "Onsen Mountain",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Brown Noddy",
+    "location": "Old Ocean Seaside",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "European Bee-Eater",
+    "location": "Onsen Mountain Lake Shore",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Great Green Macaw",
+    "location": "Nest of Hundreds Event",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Lesser Flamingo",
+    "location": "Forest Lake Shore",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Yellow Bellied Flycatcher",
+    "location": "Fishing Village Wharf",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 5
+  },
+  {
+    "name": "Cinnamon Ground Dove",
+    "location": "Fishing Village East Pier",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Hawfinch",
+    "location": "Onsen Mountain Crater Lake",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Long Eared Owl",
+    "location": "Onsen Mountain Stone Cliff",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Red Faced Cormorant",
+    "location": "Whale Sea, Old Sea",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 6
+  },
+  {
+    "name": "Azure Tit",
+    "location": "Windmill Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Common Kestrel",
+    "location": "Forest Deer Tower",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Eastern Bluebird",
+    "location": "Suburbs",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Jambu Fruit Dove",
+    "location": "Suburbs",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Peregrine Falcon",
+    "location": "Onsen Mountain",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Pink Pigeon",
+    "location": "Whale Mountain Flower Field",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Redpolis",
+    "location": "Spirit Oak Pine Forest",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "Tern",
+    "location": "East Side Seaside",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 7
+  },
+  {
+    "name": "American Flamingo",
+    "location": "Flower Field",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Imperial Shag",
+    "location": "East Sea (On the rocks)",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Paradise Tanager",
+    "location": "Suburbs",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "White-Headed Duck",
+    "location": "Onsen Mountain Lake Shore",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 9
+  },
+  {
+    "name": "Eurasian Eagle-Owl",
+    "location": "Forest Deer Tower",
+    "time": "All Day",
+    "weather": ["Rainy", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Pyrrhula",
+    "location": "Fishing Village Lighthouse",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Red-Footed Falcon",
+    "location": "Onsen Mountain Ruins",
+    "time": "All Day",
+    "weather": ["Sunny", "Rainy", "Rainbow"],
+    "level": 10
+  },
+  {
+    "name": "Verditer Flycatcher",
+    "location": "Forest Jump Puzzle",
+    "time": "All Day",
+    "weather": ["Rainbow"],
+    "level": 10
+  }
+]

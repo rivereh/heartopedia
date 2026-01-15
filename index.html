@@ -18,6 +18,10 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Heartopedia — checklist for Heartopia: track Fish, Bugs, and Birds"
+    />
     <title>Heartopedia</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -25,7 +29,9 @@
     <div class="top-banner" role="banner">
       <div class="banner-content">
         <div class="banner-title">Heartopedia</div>
-        <div class="banner-subtitle">Fish & Bug Checklist for Heartopia.</div>
+        <div class="banner-subtitle">
+          Fish, Bug, and Bird Checklist for Heartopia.
+        </div>
         <link rel="icon" href="favicon.svg" type="image/svg+xml" />
       </div>
     </div>
@@ -36,17 +42,18 @@
       </p> -->
       <div class="controls-row">
         <div class="controls-left">
-            <div class="tab-controls">
-              <button id="tabAll" class="tab-btn active">All</button>
-              <button id="tabFish" class="tab-btn">Fish</button>
-              <button id="tabBugs" class="tab-btn">Bugs</button>
-            </div>
-            <div class="filter-controls">
-              <!-- <label class="filter-available"
+          <div class="tab-controls">
+            <button id="tabAll" class="tab-btn active">All</button>
+            <button id="tabFish" class="tab-btn">Fish</button>
+            <button id="tabBugs" class="tab-btn">Bugs</button>
+            <button id="tabBirds" class="tab-btn">Birds</button>
+          </div>
+          <div class="filter-controls">
+            <!-- <label class="filter-available"
                 ><input id="showAvailableOnly" type="checkbox" /> Show available
                 now</label
               > -->
-            </div>
+          </div>
         </div>
         <div class="controls-center">
           <!-- <div id="heartopiaClock" class="heartopia-clock" aria-live="polite">
@@ -92,6 +99,19 @@
           </div>
         </div>
         <ul id="bugsList" class="checklist"></ul>
+      </section>
+
+      <section id="panel-birds" class="panel hidden">
+        <div class="panel-header">
+          <h2>Birds</h2>
+          <div class="panel-actions">
+            <select id="sortLocationBirds" class="sort-select">
+              <option value="none">Location</option>
+              <option value="location-all">Location (All)</option>
+            </select>
+          </div>
+        </div>
+        <ul id="birdsList" class="checklist"></ul>
       </section>
     </main>
 
