@@ -33,12 +33,23 @@ header {
 }
 .top-banner .banner-content {
   width: 100%;
-  padding-left: 16px;
+  padding: 0 16px;
   max-width: 820px;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.top-banner .banner-text {
+  display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
+}
+.top-banner .bmc-button {
+  align-self: flex-end;
 }
 .top-banner .banner-title {
   font-size: 3rem;
@@ -309,10 +320,27 @@ button:active {
   margin-top: 3px;
 }
 .footer {
-  padding: 12px 20px;
+  padding: 24px 20px;
   color: var(--muted);
   font-size: 0.9rem;
   text-align: center;
+}
+
+.bmc-button {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  margin-bottom: 12px;
+}
+
+.bmc-button:hover {
+  transform: translateY(-2px);
+}
+
+.bmc-button img {
+  height: 40px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive adjustments for small screens */
@@ -322,8 +350,7 @@ button:active {
     background-position: center 30%;
   }
   .top-banner .banner-content {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0 12px;
     max-width: 100%;
   }
   .top-banner .banner-title {
@@ -332,6 +359,12 @@ button:active {
   .top-banner .banner-subtitle {
     font-size: 0.9rem;
     margin-top: 4px;
+  }
+  .bmc-button img {
+    height: 32px;
+  }
+  .bmc-button {
+    margin-bottom: 8px;
   }
 
   .container {
